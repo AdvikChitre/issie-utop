@@ -204,13 +204,14 @@ let private buildSimulationComponent
         | Viewer width -> [| width |]
         | _ -> outputWidths
 
-    { Id = ComponentId comp.Id
-      Type = comp.Type
-      Label = ComponentLabel comp.Label
-      Inputs = inputs
-      Outputs = outputs
-      OutputWidths = outputWidths
-      CustomSimulationGraph = None // Custom components will be augumented by the DependencyMerger.
+    { 
+        Id = ComponentId comp.Id
+        Type = comp.Type
+        Label = ComponentLabel comp.Label
+        Inputs = inputs
+        Outputs = outputs
+        OutputWidths = outputWidths
+        CustomSimulationGraph = None // Custom components will be augumented by the DependencyMerger.
     }
 
 let getLabelConnections (comps: Component list) (conns: Connection list) =

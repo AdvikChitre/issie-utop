@@ -85,9 +85,7 @@ let portNames (componentType:ComponentType)  = //(input port names, output port 
     | Shift _ -> (["IN" ; "SHIFTER"],["OUT"])
     | Custom x -> (List.map fst x.InputLabels), (List.map fst x.OutputLabels)
     | _ -> ([],[])
-   // |Demux8 -> (["IN"; "SEL"],["0"; "1"; "2" ; "3" ; "4" ; "5" ; "6" ; "7"])
-   // |_ -> ([],[])
-   // EXTENSION: Extra Components made that are not currently in Issie. Can be extended later by using this code as it is .
+    // EXTENSION: Extra Components made that are not currently in Issie. Can be extended later by using this code as it is .
 
 let getPortName (comp:Component) (port: Port) =
     let pNames = portNames comp.Type

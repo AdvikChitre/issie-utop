@@ -866,4 +866,3 @@ let getBitsFromBigIntToUInt32 (msb: int) (lsb: int) (x: bigint) =
         printf $"""HELP! weird bits = {bits.ToString("X")} mask = {mask} msb,lsb = ({msb},{lsb})"""
 
     (uint32 bits) &&& outWMask32
-

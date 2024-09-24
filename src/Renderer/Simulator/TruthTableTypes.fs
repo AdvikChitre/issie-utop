@@ -134,8 +134,10 @@ let rowContainsAlgebra (row: TruthTableRow) =
 
 // A numerical constraint set contains Equality and Inequality Constraints
 type ConstraintSet =
-    { Equalities: EqualityConstraint list
-      Inequalities: InequalityConstraint list }
+    { 
+        Equalities: EqualityConstraint list
+        Inequalities: InequalityConstraint list 
+    }
     // Returns true if the ConstraintSet is empty
     member this.isEmpty =
         match this.Equalities, this.Inequalities with
@@ -196,7 +198,7 @@ type TableInput =
 /// Create a TableInput data structure from a SimulationIO using application state
 let initTableInput (simIO: SimulationIO) (allConstraints: ConstraintSet) (algebraIOs: SimulationIO list) =
     let (_, _, w) = simIO
-
+    
     let specificEqualities =
         allConstraints.Equalities
         |> List.filter (fun con -> con.IO = SimIO simIO)
